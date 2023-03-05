@@ -10,7 +10,7 @@ class Menu_2:
 
     def print_menu(self):  # This prints the menu. The 5 options dynamic to allow changes and make it less hard coded.
         print("*----------------*")
-        print("| MENU           |")
+        print("|      MENU      |")
         print("|----------------|")
         for option, description in self.menu_options.items():
             print(f"| {option}. {description:<12}|")
