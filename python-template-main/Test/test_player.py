@@ -27,7 +27,7 @@ class TestPlayer(unittest.TestCase):
         # Create a new player and increment the games played
         p1 = player("John")
         p1.increment_games_played()
-        self.assertEqual(p1.games_played, 2)
+        self.assertEqual(p1.games_played, 1)
 
 
 if __name__ == '__main__':    
