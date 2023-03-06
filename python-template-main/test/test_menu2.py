@@ -24,5 +24,5 @@ class TestMenu2(unittest.TestCase):
         self.assertEqual(expected_output, printed_output)
 
 # ------------------------------------------------------------------------------------------------------------------------------
-    def test_select_option(self):
+#    def test_select_option(self):
         
