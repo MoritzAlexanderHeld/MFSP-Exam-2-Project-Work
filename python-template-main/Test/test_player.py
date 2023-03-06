@@ -23,8 +23,6 @@ class TestPlayer(unittest.TestCase):
         p1.name("mike")
         self.assertEqual(p1.name, "mike")
 
-        
-
     def test_increment_games_played(self):
         # Create a new player and increment the games played
         p1 = player("John")
