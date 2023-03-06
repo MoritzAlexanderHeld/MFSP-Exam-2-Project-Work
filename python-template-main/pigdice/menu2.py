@@ -17,7 +17,11 @@ class Menu_2:
         print("|----------------|")
 
     def select_option(self, option):
-        # The print statements below are there to test on the go.
+        while option not in self.menu_options:
+            print("Invalid input, try again.")
+            option = input()
+
+    # The print statements below are there to test on the go.
         if option == "1":
             # print("You selcted Highscore")
             highscore = Highscore()
