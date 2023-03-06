@@ -4,7 +4,7 @@ import io                                  # This and the following module is ne
 from contextlib import redirect_stdout     # and compare it as string to the expected output.
 
 class TestMenu2(unittest.TestCase):
-    def test_display_menu(self):
+    def test_print_menu(self):
         menu2 = Menu_2()
         with io.StringIO() as buf, redirect_stdout(buf):  # Here the printed output is redirected to the buffer.
             menu2.print_menu()
@@ -22,3 +22,7 @@ class TestMenu2(unittest.TestCase):
 
 # Here the content of the buffer is compared to the expected output. Still does not work.
         self.assertEqual(expected_output, printed_output)
+
+# ------------------------------------------------------------------------------------------------------------------------------
+    def test_select_option(self):
+        
