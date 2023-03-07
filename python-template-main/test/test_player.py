@@ -18,10 +18,10 @@ class TestPlayer(unittest.TestCase):
     def test_name_setter(self):
         # Create a new player and change its name
         p1 = player("John")
-        p1.name("Jane")
-        self.assertEqual(p1.name, "Jane")
-        p1.name("mike")
-        self.assertEqual(p1.name, "mike")
+        p1.set_name("Jane")
+        self.assertEqual(p1.get_name, "Jane")
+        p1.set_name("mike")
+        self.assertEqual(p1.get_name, "mike")
 
     def test_increment_games_played(self):
         # Create a new player and increment the games played
