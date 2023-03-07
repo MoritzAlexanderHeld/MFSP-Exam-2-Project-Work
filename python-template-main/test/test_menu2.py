@@ -20,6 +20,7 @@ class TestMenu2(unittest.TestCase):
 |----------------|
 """
 # Here the content of the buffer is compared to the expected output. Still does not work.
-# ------------------------------------------------------------------------------------------------------------------------------
-        # def test_select_option(self):
         self.assertEqual(expected_output, printed_output)
+# ------------------------------------------------------------------------------------------------------------------------------
+    def test_select_option(self):
+        pass
