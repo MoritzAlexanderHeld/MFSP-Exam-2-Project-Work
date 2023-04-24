@@ -1,5 +1,14 @@
-class Menu_2:
-    def __init__(self):  # Here every integer is assigned the associated menu point.
+# Creates the secondary menu, stating the player data
+
+# The rules of the game are missing
+
+from highscore import Highscore
+from menu1 import Menu1
+
+
+class Menu2:
+    def __init__(self, player):  # Here every integer is assigned the associated menu point.
+        self.player = player
         self.menu_options = {
             "1": "Highscore",
             "2": "Change name",
@@ -24,27 +33,20 @@ class Menu_2:
         if option == "1":
             # print("You selcted Highscore")
             highscore = Highscore()
-            highscore.display_highscore()
+            highscore.display_high_scores()
         elif option == "2":
             # print("You selected Change Name")
-            change_name = ChangeName()
-            change_name.change_player_name()
+            name = input("New name: ")
+            self.player.set_name(name)
         elif option == "3":
             # print("You selected Display Rules")
-            rules = Rules()
-            rules.display_rules()
+            self.display_rules()
         elif option == "4":
             # print("You selected Restart and will be brought to the start menu.")
-            menu_1 = Menu()
-            menu_1.display_menu()
-            menu_1.select_option(input("Select an option: "))
+            menu_1 = Menu1()
+            menu_1.start_menu()
         elif option == "5":
             exit()
 
-
-if __name__ == "__main__":
-    menu = Menu_2()
-    while True:
-        menu.print_menu()
-        user_input = input()
-        menu.select_option(user_input)
+    def display_rules():
+        print("")
