@@ -1,8 +1,13 @@
-# Creates the main menu, creates players and sets the computer difficulty in
-# case that's the chosen game style
+# Creates the main menu
+# 1.    Reads the players.txt file and saves each stored player and
+#       highscore in a list
+# 2.    If the user selects a player with an already saved name, the
+#       stats will update accordingly. If not, it creates the player
+# 3.    Sets the computer difficulty in case that's the chosen game style
 
 from player import Player
 from intelligence import intelligence
+from game import Game
 
 
 class Menu1:
@@ -15,11 +20,17 @@ class Menu1:
         for line in file:
             line.split(',')
             name = line[0]
-            played_games = line[1]
-            won_games = line[2]
-            average_steps_to_win = line[3]
             player = Player(name)
-            player.highscore.set_highscore(played_games, won_games, average_steps_to_win)
+            player.highscore.played_games = line[1]
+            player.highscore.won_games = line[2]
+            player.highscore.average_steps_to_win = line[3]
+            self.player_list.append(player)
+        file.close()
+
+    def save_players(self):
+        file = open('players.txt', 'w')
+        for player in self.player_list:
+            file.write(f'{player.name},{player.highscore.played_games},{player.highscore.won_games},{player.highscore.average_steps_to_win}')
 
     def start_menu(self):
         print("Welcome to the Pig Dice Game!")
@@ -30,6 +41,8 @@ class Menu1:
         if choice == '1':       # PvP
             self.select_player()        # Create Player1
             self.select_player()        # Create Player2
+            game = Game()
+            
             # code for PvP game
 
         elif choice == '2':     # PvC
@@ -48,8 +61,11 @@ class Menu1:
             is_new_player = input("Are you a new player? (y/n): ")
             if is_new_player.lower() == 'n':
                 name = input("Enter your name: ")
-                if name in self.player_list:
-                    print("Welcome back, {}!".format(name))
+                for player in self.player_list:
+                    if player.name == name:
+                        print("Welcome back, {}!".format(name))
+                        self.player_list.remove(player)
+                        return player
                 else:
                     print("No player with that name exists.")
                     create_new = input("Do you want to create a new player? (y/n): ")

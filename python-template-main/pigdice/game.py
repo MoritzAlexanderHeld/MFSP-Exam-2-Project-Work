@@ -7,7 +7,7 @@ import menu1
 import menu2"""
 
 
-class game:
+class Game:
     def __init__(self, players=[]):
         self.players = players
         self.players.append(player("Reem", 0))
