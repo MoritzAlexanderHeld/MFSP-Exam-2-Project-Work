@@ -31,18 +31,20 @@ class Menu1:
         file = open('players.txt', 'w')
         for player in self.player_list:
             file.write(f'{player.name},{player.highscore.played_games},{player.highscore.won_games},{player.highscore.average_steps_to_win}')
+        file.close()
 
     def start_menu(self):
+        self.get_players()
         print("Welcome to the Pig Dice Game!")
         print("1. Play PvP (Player vs Player)")
         print("2. Play PvC (Player vs Computer)")
         choice = input("Enter choice (1/2): ")
 
         if choice == '1':       # PvP
-            self.select_player()        # Create Player1
-            self.select_player()        # Create Player2
-            game = Game()
-            
+            player1 = self.select_player()        # Create Player1
+            player2 = self.select_player()        # Create Player2
+            game = Game(player1, player2)
+            game.turn(player1)
             # code for PvP game
 
         elif choice == '2':     # PvC
