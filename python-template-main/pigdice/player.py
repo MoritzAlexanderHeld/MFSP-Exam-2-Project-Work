@@ -1,34 +1,42 @@
-# Stores the name and highscore associeted with the player
-
-from dicehand import DiceHand
-from dice import Dice
-from highscore import Highscore
 
 
 class Player:
-
-    def __init__(self, name):
+    def __init__(self, name, score=0, total_score=0, turns=0, human=True):
         self.name = name
-        self.highscore = Highscore()
-        self.dicehand = DiceHand()
-
-    def set_name(self, value):
-        self.name = value
+        self.score = score
+        self.total_score = total_score
+        self.turns = turns
+        self.human = human
 
     def get_name(self):
         return self.name
 
-    def increment_games_played(self):
-        self.highscore.player_stats["played_games"] += 1
+    def get_score(self):
+        return self.score
 
-    def play(self):
-        roll = Dice.roll(self)
-        if roll == 1:
-            print(f"{self.name} rolled a 1 and lost their turn.")
-            return
-        self.score += roll
-        print(f"{self.name} rolled a {roll}. Current score: {self.score}")
+    def get_total_score(self):
+        return self.total_score
 
-    def print_score(self):
-        high_scores = self.highscore.display_high_scores()
-        print(f"{self.name}: {high_scores}")
+    def get_turns(self):
+        return self.turns
+
+    def is_human(self):
+        return self.human
+
+    def is_winner(self):
+        return self.total_score >= 100
+
+    def add_turn(self):
+        self.turns += 1
+
+    def reset_score(self):
+        self.score = 0
+
+    def add_score(self, dice_value):
+        self.score += dice_value
+
+    def update_total_score(self):
+        self.total_score += self.score
+
+    def change_name(self, name):
+        self.name = name
