@@ -1,5 +1,4 @@
 import random
-
 from dice import Dice
 from highscore import Highscore
 
