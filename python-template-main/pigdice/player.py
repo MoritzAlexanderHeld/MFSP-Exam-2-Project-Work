@@ -1,6 +1,5 @@
-
-
 class Player:
+ 
     def __init__(self, name, score=0, total_score=0, turns=0, human=True):
         self.name = name
         self.score = score
@@ -23,8 +22,14 @@ class Player:
     def is_human(self):
         return self.human
 
-    def is_winner(self):
-        return self.total_score >= 100
+    def set_total_score(self, total_score):
+        self.total_score = total_score
+
+    def set_turns(self, turns):
+        self.turns = turns
+
+    def is_not_winner(self):
+        return (self.total_score + self.score) < 100
 
     def add_turn(self):
         self.turns += 1
