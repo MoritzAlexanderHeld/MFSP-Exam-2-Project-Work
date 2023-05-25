@@ -126,7 +126,13 @@ def play_game(players, computer_difficulty):
                 else:
                     player_choice = 'h'
             elif computer_difficulty == 2:
-                turns_remaining = (100 - current_player.get_total_score()) // current_player.get_score()
+                # In the following 4 lines I fixed a zero division error, not in a beautiful way,
+                # but without changing too much code.
+                if current_player.get_score() != 0:
+                    turns_remaining = (100 - current_player.get_total_score()) // current_player.get_score()
+                else:
+                    turns_remaining = 5
+
                 if turns_remaining > 4:
                     target_score = 25
                 else:
