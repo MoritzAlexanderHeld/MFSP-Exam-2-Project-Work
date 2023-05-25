@@ -1,4 +1,9 @@
+.vscode
+.coveragerc
 .coverage
+.editor
+.flake8
+.pylintrc
 .venv/
 __pycache__
 htmlcov/
