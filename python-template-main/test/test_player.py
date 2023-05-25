@@ -1,34 +1,59 @@
 import unittest
-
-from pigdice.player import player
+from pigdice.player import Player
 
 
 class TestPlayer(unittest.TestCase):
-    
-    # def setup(self):
-    #     self.P1 = player("John", 50)
-     
-    def test_player_attributes(self):
-        # Create a new player and check its attributes
-        p1 = player("John", 50)
-        self.assertEqual(p1.name, "John")
-        self.assertEqual(p1.highscore, 50)
-        self.assertEqual(p1.games_played, 0)
 
-    def test_name_setter(self):
-        # Create a new player and change its name
-        p1 = player("John")
-        p1.set_name("Jane")
-        self.assertEqual(p1.get_name, "Jane")
-        p1.set_name("mike")
-        self.assertEqual(p1.get_name, "mike")
+    def setUp(self):
+        self.player = Player("John")
 
-    def test_increment_games_played(self):
-        # Create a new player and increment the games played
-        p1 = player("John")
-        p1.increment_games_played()
-        self.assertEqual(p1.games_played, 1)
+    def test_get_name(self):
+        self.assertEqual(self.player.get_name(), "John")
+
+    def test_get_score(self):
+        self.assertEqual(self.player.get_score(), 0)
+
+    def test_get_total_score(self):
+        self.assertEqual(self.player.get_total_score(), 0)
+
+    def test_get_turns(self):
+        self.assertEqual(self.player.get_turns(), 0)
+
+    def test_is_human(self):
+        self.assertTrue(self.player.is_human())
+
+    def test_set_total_score(self):
+        self.player.set_total_score(100)
+        self.assertEqual(self.player.get_total_score(), 100)
+
+    def test_set_turns(self):
+        self.player.set_turns(5)
+        self.assertEqual(self.player.get_turns(), 5)
+
+    def test_is_not_winner(self):
+        self.assertTrue(self.player.is_not_winner())
+
+    def test_add_turn(self):
+        self.player.add_turn()
+        self.assertEqual(self.player.get_turns(), 1)
+
+    def test_reset_score(self):
+        self.player.reset_score()
+        self.assertEqual(self.player.get_score(), 0)
+
+    def test_add_score(self):
+        self.player.add_score(5)
+        self.assertEqual(self.player.get_score(), 5)
+
+    def test_update_total_score(self):
+        self.player.add_score(10)
+        self.player.update_total_score()
+        self.assertEqual(self.player.get_total_score(), 10)
+
+    def test_change_name(self):
+        self.player.change_name("Mike")
+        self.assertEqual(self.player.get_name(), "Mike")
 
 
-if __name__ == '__main__':    
+if __name__ == '__main__':
     unittest.main()
