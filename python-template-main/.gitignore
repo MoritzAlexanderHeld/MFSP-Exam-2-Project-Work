@@ -8,6 +8,7 @@
 __pycache__
 htmlcov/
 *.pyc
+*.xml
 dice/doc
 guess/doc
 build/
