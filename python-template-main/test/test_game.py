@@ -1,12 +1,14 @@
+"""testing game module."""
 import sys
-sys.path.insert(0, '../python-template-main/pigdice')
 import unittest
 from unittest.mock import patch
-import game
-from player import Player
+from pigdice import game
+from pigdice.player import Player
+sys.path.insert(0, '../python-template-main/pigdice')
 
 
 class GameTestCase(unittest.TestCase):
+    """creating player objects."""
 
     def test_select_starting_player(self):
         players = ["Player1", "Player2"]
