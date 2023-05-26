@@ -1,15 +1,15 @@
+"""testing highscore."""
 import sys
-sys.path.insert(0, '../python-template-main/pigdice')
 import unittest
 from io import StringIO
 from unittest.mock import patch
 from pigdice.highscore import Highscore
+sys.path.insert(0, '../python-template-main/pigdice')
 
 
 class HighscoreTestCase(unittest.TestCase):
-
+    """Here we create an instance again, to be able to perform the tests."""
     def setUp(self):
-        # Here we create an instance again, to be able to perform the tests
         self.highscore = Highscore()
         # We also create a test file, to isolate the test from the actual high_scores.txt
         self.highscore.filename = "test_high_scores.txt"

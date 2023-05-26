@@ -1,10 +1,15 @@
+"""testing dice class."""
+
+import sys
 import unittest
 from unittest.mock import patch
 from pigdice.dice import Dice
+sys.path.insert(0, '../python-template-main/pigdice')
 
 
 class DiceTests(unittest.TestCase):
-    # in the setUp we create an instance of the dice, to be able to test it
+    """in the setUp we create an instance of the dice, to be able to test it."""
+
     def setUp(self):
         self.dice = Dice()
 

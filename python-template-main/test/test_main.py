@@ -1,13 +1,16 @@
+"""testing main."""
 
 import sys
-sys.path.insert(0, '../python-template-main/pigdice')
 import unittest
 from unittest.mock import patch
 from io import StringIO
-import main
+from pigdice import main
+sys.path.insert(0, '../python-template-main/pigdice')
 
 
 class TestMain(unittest.TestCase):
+    """creating player objects."""
+
     def setUp(self):
         self.players = [
             main.Player("Player1"),
