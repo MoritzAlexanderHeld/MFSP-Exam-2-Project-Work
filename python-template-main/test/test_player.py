@@ -5,7 +5,7 @@ from pigdice.player import Player
 
 class TestPlayer(unittest.TestCase):
 
-    """Creating an instance of player "John""""
+    """Creating an instance of player "John"""
     def setUp(self):
         self.player = Player("John")
 
