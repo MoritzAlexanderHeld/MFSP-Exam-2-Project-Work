@@ -1,9 +1,5 @@
-"""Thia ia the player class."""
-
-
 class Player:
-    """constructor with attributes for player object."""
-
+ 
     def __init__(self, name, score=0, total_score=0, turns=0, human=True):
         self.name = name
         self.score = score
