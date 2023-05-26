@@ -1,6 +1,6 @@
 import random
-from pigdice.dice import Dice
-from pigdice.highscore import Highscore
+from dice import Dice
+from highscore import Highscore
 
 
 # Prints the banner celebrating the winner
@@ -93,8 +93,7 @@ def play_game(players, computer_difficulty):
                 dice.display(dice_value)
                 if dice_value == 1:
                     current_player.add_turn()
-                    print("Oops! You rolled a 1. Your turn is over, and you\
-                        scored nothing.")
+                    print("Oops! You rolled a 1. Your turn is over, and you scored nothing.")
                     current_player.reset_score()
                     current_player = update_current_player(players, current_player)
                 else:

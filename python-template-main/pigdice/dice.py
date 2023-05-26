@@ -3,6 +3,7 @@ import random
 
 
 class Dice:
+    """creatig dice ASCII art."""
     def __init__(self):
         self.dice_art = [
             "╔═════════╗\n║         ║\n║    *    ║\n║         ║\n╚═════════╝",

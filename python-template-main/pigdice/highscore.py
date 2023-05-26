@@ -1,4 +1,8 @@
+"""saves Highscore in txt file."""
+
+
 class Highscore:
+    """constructor with a variable containing file string literal."""
 
     def __init__(self):
         self.filename = "high_scores.txt"
