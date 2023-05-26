@@ -1,6 +1,8 @@
+import sys
+sys.path.insert(0, '../python-template-main/pigdice')
 import unittest
 from unittest.mock import patch
-from pigdice.dice import Dice
+from dice import Dice
 
 
 class DiceTests(unittest.TestCase):
