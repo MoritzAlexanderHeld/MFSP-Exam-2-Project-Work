@@ -1,7 +1,10 @@
+
+import sys
+sys.path.insert(0, '../python-template-main/pigdice')
 import unittest
 from unittest.mock import patch
 from io import StringIO
-from pigdice import main
+import main
 
 
 class TestMain(unittest.TestCase):

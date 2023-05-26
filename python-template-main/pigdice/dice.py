@@ -1,3 +1,4 @@
+"""creates dice object."""
 import random
 
 
