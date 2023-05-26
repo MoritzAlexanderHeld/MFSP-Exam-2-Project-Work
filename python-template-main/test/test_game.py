@@ -48,7 +48,9 @@ class GameTestCase(unittest.TestCase):
 
     # Here we test the play_game function. We first set up two player, one human and one not human.
     # Then we patch the inputs 'r' and 'h' to roll once and hold once
-    # we then patch the roll function with the returned value 3
+    # we then patch the roll function with the returned value 3.
+    # Unfortunately in this test we ran from one error into the next one, and we could not solve them in time,
+    # so we had to leave it unfinished and comment it out.
 #    def test_play_game(self):
 #        players = [Player("Player1", True), Player("Player2", False)]
 #        with patch("builtins.input", side_effect=['r', 'h']):
