@@ -1,5 +1,6 @@
-from pigdice.highscore import Highscore
-from pigdice.player import Player
+"""This is the main class."""
+from highscore import Highscore
+from player import Player
 import game
 
 
