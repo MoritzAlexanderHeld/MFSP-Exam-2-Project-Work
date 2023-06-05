@@ -1,3 +1,4 @@
+"""saves Highscore in txt file."""
 class Highscore:
 
     def __init__(self):
