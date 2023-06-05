@@ -1,6 +1,6 @@
 import random
-from pigdice.dice import Dice
-from pigdice.highscore import Highscore
+from dice import Dice
+from highscore import Highscore
 
 
 # Prints the banner celebrating the winner
